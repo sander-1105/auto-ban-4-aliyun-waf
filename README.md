@@ -1,4 +1,4 @@
-# aliyun-waf-auto-band-ip
+# aliyun-waf-auto-ban-ip
 
 
 
@@ -102,7 +102,7 @@
    7. 阿里云帐号（AK）授权举例：
 
       ```json
-      #dns解析用
+      # dns解析用
       {
           "Version": "1",
           "Statement": [
@@ -123,7 +123,7 @@
           ]
       }
       
-      #WAF API操作用
+      # WAF API操作用
       {
           "Version": "1",
           "Statement": [
@@ -160,4 +160,3 @@
       }
       
       ```
-# aliyun-waf-auto-band
