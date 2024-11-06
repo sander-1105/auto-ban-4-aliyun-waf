@@ -86,7 +86,7 @@
       #start.sh
       #!/bin/bash
       
-      cd /data/service/aliyun-waf-auto-band-ip
+      cd /data/service/aliyun-waf-auto-ban-ip
       
       conda init >/dev/null
       
@@ -95,11 +95,10 @@
       
       source /root/miniconda3/bin/activate python-3.8
       
-      /root/miniconda3/envs/python-3.8/bin/python3 /data/service/aliyun-waf-auto-band-ip/scan_ip.py
+      /root/miniconda3/envs/python-3.8/bin/python3 /data/service/aliyun-waf-auto-ban-ip/scan_ip.py
       ```
 
       
-
    7. 阿里云帐号（AK）授权举例：
 
       ```json
