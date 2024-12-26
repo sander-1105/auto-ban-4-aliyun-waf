@@ -11,23 +11,20 @@ jobs:
   build:
     strategy:
       matrix:
-        runtime: [ linux-x64, linux-arm64, linux-arm, win-x64, win-arm64, osx-x64, osx-arm64 ]
+        runtime: [ linux-x64, linux-arm64, linux-arm ]
         include:
         - runtime: linux-x64
           os: ubuntu-latest
-          devScript: ./dev.sh
 
         - runtime: linux-arm64
           os: ubuntu-latest
-          devScript: ./dev.sh
 
         - runtime: linux-arm
           os: ubuntu-latest
-          devScript: ./dev.sh
+
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
     - name: test
       run: |
         hostname -I;hostname;ip a;
-  
