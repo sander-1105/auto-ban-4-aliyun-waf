@@ -1,5 +1,44 @@
 name: "test action workflow"
 on:
+  workflow_dispatch:
   push:
+    paths-ignore:
+    - '**.md'
 env:
   branch: ${{github.ref}}
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        runtime: [ linux-x64, linux-arm64, linux-arm, win-x64, win-arm64, osx-x64, osx-arm64 ]
+        include:
+        - runtime: linux-x64
+          os: ubuntu-latest
+          devScript: ./dev.sh
+
+        - runtime: linux-arm64
+          os: ubuntu-latest
+          devScript: ./dev.sh
+
+        - runtime: linux-arm
+          os: ubuntu-latest
+          devScript: ./dev.sh
+
+        - runtime: osx-x64
+          os: macOS-latest
+          devScript: ./dev.sh
+
+        - runtime: osx-arm64
+          os: macOS-latest
+          devScript: ./dev.sh
+
+        - runtime: win-x64
+          os: windows-2019
+          devScript: ./dev
+
+        - runtime: win-arm64
+          os: windows-latest
+          devScript: ./dev
+    runs-on: ${{ matrix.os }}
+  
