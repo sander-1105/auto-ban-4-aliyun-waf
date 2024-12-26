@@ -16,13 +16,13 @@ jobs:
           runtime: [ linux-x64, linux-arm64, linux-arm ]
           include:
           - runtime: linux-x64
-            os: ubuntu-latest
+            os: Ubuntu-24.04
   
           - runtime: linux-arm64
-            os: ubuntu-latest
+            os: Ubuntu-24.04
   
           - runtime: linux-arm
-            os: ubuntu-latest
+            os: Ubuntu-24.04
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
