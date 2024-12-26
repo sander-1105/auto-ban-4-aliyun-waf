@@ -8,30 +8,24 @@ env:
   branch: ${{github.ref}}
 
 jobs:
-  myTest:
-    if: ${{github.ref}} == 'refs/heads/dev'
-    runs-on: ${{ matrix.os }}
-    steps:
+  mytest1:
+    build:
+      strategy:
+        matrix:
+          runtime: [ linux-x64, linux-arm64, linux-arm ]
+          include:
+          - runtime: linux-x64
+            os: ubuntu-latest
+  
+          - runtime: linux-arm64
+            os: ubuntu-latest
+  
+          - runtime: linux-arm
+            os: ubuntu-latest
+  
+      runs-on: ${{ matrix.os }}
+      steps:
       - uses: actions/checkout@v4
-      - name: test test test
+      - name: test
         run: |
           hostname -I;hostname;ip a;
-#  build:
-#    strategy:
-#      matrix:
-#        runtime: [ linux-x64, linux-arm64, linux-arm ]
-#        include:
-#        - runtime: linux-x64
-#          os: ubuntu-latest
-#
-#        - runtime: linux-arm64
-#          os: ubuntu-latest
-#
-#        - runtime: linux-arm
-#          os: ubuntu-latest
-#    runs-on: ${{ matrix.os }}
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: test
-#        run: |
-#          hostname -I;hostname;ip a;
