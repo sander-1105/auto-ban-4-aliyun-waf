@@ -9,7 +9,7 @@ env:
 
 jobs:
   mytest1:
-    if: startsWith(github.ref, 'refs/heads/dev/') || github.ref == 'refs/heads/dev'
+    if: startsWith(github.ref, 'refs/heads/main/') || github.ref == 'refs/heads/main'
     name: test
     strategy:
       matrix:
