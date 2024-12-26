@@ -1,0 +1,5 @@
+name: "test action workflow"
+on:
+  push:
+env:
+  branch: ${{github.ref}}
